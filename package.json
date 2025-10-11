@@ -1,10 +1,12 @@
 {
   "name": "flyspage",
-  "module": "index.ts",
+  "module": "eleventy.config.mjs",
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "bun run eleventy"
+    "start": "bun run eleventy --serve --quiet",
+    "build": "bun run eleventy",
+    "build-ghpages": "bun run eleventy --pathprefix=/flyspage/"
   },
   "devDependencies": {
     "@types/bun": "latest"

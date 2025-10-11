@@ -1,7 +1,14 @@
 export default function(eleventyConfig) {
-  eleventyConfig.addGlobalData("pathPrefix", "/flyspage/")
+  eleventyConfig.addPassthroughCopy('public')
+  eleventyConfig.addWatchTarget('public')
 
   return {
-    pathPrefix: "/flyspage/",
+    dir: {
+      input: 'src',
+      includes: '_partials',
+      layouts: '_layouts',
+      data: '_data',
+      output: 'build',
+    },
   }
 }
