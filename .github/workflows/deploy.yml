@@ -1,29 +1,29 @@
 name: Deploy Eleventy to GitHub Pages
 
-    on:
-      push:
-        branches:
-          - main
+on:
+  push:
+    branches:
+      - main
 
-    jobs:
-      build-and-deploy:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout repository
-            uses: actions/checkout@v4
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-          - name: Install Bun
-            uses: oven-sh/setup-bun@v1
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
 
-          - name: Install dependencies
-            run: bun install
+      - name: Install dependencies
+        run: bun install
 
-          - name: Build Eleventy site
-            run: bun run build
+      - name: Build Eleventy site
+        run: bun run build
 
-          - name: Deploy to GitHub Pages
-            uses: peaceiris/actions-gh-pages@v4
-            with:
-              github_token: ${{ secrets.GITHUB_TOKEN }}
-              publish_dir: ./_site # Or your Eleventy output directory
-              publish_branch: gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site # Or your Eleventy output directory
+          publish_branch: gh-pages
