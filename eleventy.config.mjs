@@ -1,4 +1,4 @@
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   eleventyConfig.addGlobalData("pathPrefix", "/flyspage/")
 
   return {
