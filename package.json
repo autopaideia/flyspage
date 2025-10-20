@@ -1,21 +1,13 @@
 {
   "name": "flyspage",
-  "module": "eleventy.config.mjs",
-  "type": "module",
   "private": true,
-  "scripts": {
-    "start": "bun run eleventy --serve --quiet",
-    "build": "bun run eleventy",
-    "build-ghpages": "bun run eleventy --pathprefix=/flyspage/"
-  },
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-navigation": "^1.0.4"
+  },
+  "scripts": {
+    "start": "eleventy --serve --quiet",
+    "build": "eleventy",
+    "build-ghpages": "eleventy --pathprefix=/flyspage/"
   }
 }
