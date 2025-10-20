@@ -1,0 +1,4 @@
+{
+  "scripts": ["/scripts/site.js"],
+  "styles": ["/styles/main.css"]
+}

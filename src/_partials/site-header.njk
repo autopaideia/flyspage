@@ -1,11 +1,5 @@
-<header>
-  <nav>
-    <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Graphics</a></li>
-      <li><a href="#">Writings</a></li>
-      <li><a href="#">Reviews &amp; Interviews</a></li>
-      <li><a href="#">Merch</a></li>
-    </ul>
+<header class="site-header">
+  <nav class="gnav">
+    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
   </nav>
 </header>

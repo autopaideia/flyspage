@@ -1,0 +1,18 @@
+<div class="gallery-filters">
+  {{ collections.all | eleventyNavigation('Gallery') | eleventyNavigationToHtml(galleryNavOptions) | safe }}
+</div>
+
+<div class="gallery-grid">
+  {% for image in images %}
+    <div
+      class="gallery-item"
+      data-gallery-year="{{ image.year }}"
+      data-gallery-tags="{{ image.tags | dump }}"
+      data-gallery-cols="{{ gridLayout[loop.index0][0] }}"
+      data-gallery-rows="{{ gridLayout[loop.index0][1] }}"
+    >
+      <img class="gallery-img" src="{{ image.src }}" alt="{{ image.alt }}" />
+      <h3 class="gallery-title">{{ image.title }}</h3>
+    </div>
+  {% endfor %}
+  </div>

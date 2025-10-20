@@ -1,8 +1,12 @@
-import { HtmlBasePlugin } from '@11ty/eleventy'
 import fs from 'fs'
+import { HtmlBasePlugin } from '@11ty/eleventy'
+import eleventyNavigationPlugin from '@11ty/eleventy-navigation'
 
 export default function(eleventyConfig) {
   eleventyConfig.addPlugin(HtmlBasePlugin)
+  eleventyConfig.addPlugin(eleventyNavigationPlugin)
+
+  eleventyConfig.addGlobalData('layout', 'base.njk')
 
   // Copy everything in ./public into root directory (not <root>/public/...)
   const publicDir = 'public'

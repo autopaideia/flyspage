@@ -1,7 +1,8 @@
 ---
 layout: home.njk
+eleventyNavigation:
+  key: Home
+  order: 0
 ---
 
 # Fly-Ø Art
-
-![A punk jumping into a dumpster](images/reduced_dumster_diving.gif)
